@@ -1,0 +1,43 @@
+String SendHTML(){
+  String ptr ;
+  ptr.reserve(1024);
+   "Connection: Keep-Alive\n";
+  ptr = "<!DOCTYPE html> \n";
+  ptr+="<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=windows-1252\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\"><meta http-equiv=\"Connection\" content=\"Keep-Alive\">\n";
+  ptr+="<title>E-Robo-Soccer</title>\n";
+  ptr+="<style>html { font-family: Helvetica; display: inline-block; margin: 0px auto; text-align: center;}\n";
+  ptr+="body{margin-top: 20px;background-color: #D3D3D3;} h1 {color: #444444;margin: 20px auto 20px;} h3 {color: #444444;margin-bottom: 50px;}\n";
+  ptr+="#outer{margin:0px auto ;width :100%; min-width: 500px;}\n";
+  ptr+=".inner{margin:0px auto; width:500px;}\n";
+  ptr+=".button {display:inline-block;width: 80px;background-color: #1abc9c;border-style: solid;color: white;padding: 13px 30px;text-decoration: none;font-size: 25px;margin: 8px 4px 8px 4px;cursor: pointer;border-radius: 8px;}\n";
+  ptr+=".button-on {background-color: #1abc9c;}\n";
+  ptr+=".button-on:active {background-color: #16a085;}\n";
+  ptr+=".button-off {background-color: #34495e;}\n";
+  ptr+=".button-off:active {background-color: #2c3e50;}\n";
+  ptr+="p {font-size: 14px;color: #888;margin-bottom: 10px;}\n";
+  ptr+="</style>\n";
+  ptr+="<script src= \"https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js\"></script>\n";
+  ptr+="<script type=\"text/javascript\">\n";
+  ptr+="$(document).ready(function(){\n";
+  ptr+="$(\".button\").on('click' , function(e){\n";
+  ptr+="e.preventDefault();\n";
+  ptr+="var url = $(this).attr('href');\n";
+  ptr+="$.get(url);\n";
+  ptr+="});\n";
+  ptr+="});\n";
+  ptr+="</script>\n";
+  ptr+="</head>\n";
+  ptr+="<body>\n";
+  ptr+="<div id = \"outer\">\n";
+  ptr+="<h1>E-Robo-Soccer</h1>\n";
+  ptr+="<div class =\"inner\" ><a class=\"button button-on\" href=\"/forward_no\">forward</a></div>\n";
+  ptr+="<div class =\"inner\" ><a class=\"button button-on\" href=\"/left_no\">left</a>\n";
+  ptr+="<a class=\"button button-on\" href=\"/stop_no\">stop</a>\n";
+  ptr+="<a class=\"button button-on\" href=\"/right_no\">right</a></div>\n";
+  ptr+="<div class =\"inner\" ><a class=\"button button-off\" href=\"/reverse_no\">reverse</a></div>\n";
+  ptr+="<h3>By Robo Society <br>PEC</h3>\n";
+  ptr+="</div>\n";
+  ptr+="</body></html>\n";
+
+  return ptr;
+}
